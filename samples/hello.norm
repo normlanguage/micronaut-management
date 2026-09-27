@@ -1,0 +1,28 @@
+import micronaut.management.endpoint.annotation.Endpoint
+import micronaut.management.endpoint.annotation.Read
+import micronaut.web.MicronautApplication
+import micronaut.web.MicronautConfig
+import micronaut.web.Micronaut
+import micronaut.web.Server
+import std.application.Application
+
+@Endpoint(value: "sample-health", defaultEnabled: true, defaultSensitive: false)
+public class SampleHealthEndpoint {
+  @Read()
+  String status() {
+    return "UP"
+  }
+}
+
+Module module() {
+  module(dependencies: [
+    dependency(repository: "github", name: "micronaut.web", version: 7),
+    dependency(repository: "github", name: "micronaut.management", version: 3)
+  ])
+}
+
+public Application application() {
+  return MicronautApplication(config: MicronautConfig(
+    micronaut: Micronaut(server: Server(host: "127.0.0.1", port: 18768))
+  ))
+}
