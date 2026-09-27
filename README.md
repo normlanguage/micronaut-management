@@ -1,3 +1,5 @@
 # Micronaut Management
 
-`micronaut.management@1` 绑定 Micronaut Management 5.1.13 的 Endpoint Annotation 与常用 Health 类型。可运行示例位于 `micronaut/management/Main.norm`。
+[English](README.md) | [简体中文](README.zh-CN.md)
+
+`micronaut.management@1` binds the endpoint annotations and common health types of Micronaut Management 5.1.13. A runnable example is in `micronaut/management/Main.norm`.
