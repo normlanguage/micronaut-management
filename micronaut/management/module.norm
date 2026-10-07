@@ -1,7 +1,9 @@
 Module module() {
   return module(
     name: "micronaut.management",
-    version: 3,
+    version: 4,
+    exports: ["endpoint.annotation.Endpoint", "endpoint.annotation.Read", "endpoint.annotation.Write", "endpoint.annotation.Delete", "endpoint.annotation.Selector", "endpoint.annotation.Sensitive", "endpoint.health.DetailsVisibility", "health.indicator.HealthCheckType"],
+    dependencies: [dependency(repository: "norm", name: "java.base", version: 1)],
     binding: jarBinding(
       target: mavenJar(
         group: "io.micronaut",
@@ -10,16 +12,16 @@ Module module() {
       ),
       api: [
         jarType(
-          name: "endpoint.annotation.Endpoint",
+          name: "io.micronaut.management.endpoint.annotation.Endpoint", alias: "endpoint.annotation.Endpoint",
           members: ["defaultConfigurationId", "defaultEnabled", "defaultSensitive", "id", "prefix", "value"]
         ),
-        jarType(name: "endpoint.annotation.Read", members: ["description", "produces"]),
-        jarType(name: "endpoint.annotation.Write", members: ["consumes", "description", "produces"]),
-        jarType(name: "endpoint.annotation.Delete", members: ["description", "produces"]),
-        jarType(name: "endpoint.annotation.Selector", members: []),
-        jarType(name: "endpoint.annotation.Sensitive", members: ["defaultValue", "property", "value"]),
-        jarType(name: "endpoint.health.DetailsVisibility", members: []),
-        jarType(name: "health.indicator.HealthCheckType", members: [])
+        jarType(name: "io.micronaut.management.endpoint.annotation.Read", alias: "endpoint.annotation.Read", members: ["description", "produces"]),
+        jarType(name: "io.micronaut.management.endpoint.annotation.Write", alias: "endpoint.annotation.Write", members: ["consumes", "description", "produces"]),
+        jarType(name: "io.micronaut.management.endpoint.annotation.Delete", alias: "endpoint.annotation.Delete", members: ["description", "produces"]),
+        jarType(name: "io.micronaut.management.endpoint.annotation.Selector", alias: "endpoint.annotation.Selector", members: []),
+        jarType(name: "io.micronaut.management.endpoint.annotation.Sensitive", alias: "endpoint.annotation.Sensitive", members: ["defaultValue", "property", "value"]),
+        jarType(name: "io.micronaut.management.endpoint.health.DetailsVisibility", alias: "endpoint.health.DetailsVisibility", members: []),
+        jarType(name: "io.micronaut.management.health.indicator.HealthCheckType", alias: "health.indicator.HealthCheckType", members: [])
       ]
     )
   )

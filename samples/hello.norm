@@ -16,8 +16,8 @@ public class SampleHealthEndpoint {
 
 Module module() {
   module(dependencies: [
-    dependency(repository: "github", name: "micronaut.web", version: 9),
-    dependency(repository: "github", name: "micronaut.management", version: 3)
+    dependency(repository: "github", name: "micronaut.web", version: 10),
+    dependency(repository: "github", name: "micronaut.management", version: 4)
   ])
 }
 
