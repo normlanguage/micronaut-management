@@ -1,7 +1,7 @@
 Module module() {
   return module(
     name: "micronaut.management",
-    version: 4,
+    version: 5,
     exports: ["endpoint.annotation.Endpoint", "endpoint.annotation.Read", "endpoint.annotation.Write", "endpoint.annotation.Delete", "endpoint.annotation.Selector", "endpoint.annotation.Sensitive", "endpoint.health.DetailsVisibility", "health.indicator.HealthCheckType"],
     dependencies: [dependency(repository: "norm", name: "java.base", version: 1)],
     binding: jarBinding(
